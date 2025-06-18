@@ -15,7 +15,7 @@ function App() {
     //to check the toname value is present in the todolist array.
     if (!todolist.includes(toname)) {
       //it will hold the previouse exsiting value and new value from toname (txt bx.)
-      let finalToDoList = [...todolist, toname]; //array spreding
+      let finalToDoList = [...todolist, toname]; //array spreding....
       setTodolist(finalToDoList);
     } else {
       alert("name is already present...!");
@@ -31,9 +31,17 @@ function App() {
       {/* table format  */}
       <div className="outerDiv">
         <ul>
-          <li>
-            HTML<span>&times;</span>
-          </li>
+          {todolist.map((value, index) => {
+            return (
+              <ToDoListItems
+                value={value}
+                key={index}
+                keyNumber={index} //to get the index number
+                todolist={todolist} // final array contains all records.
+                setTodolist={setTodolist} //the fn who changes the value of useState.
+              />
+            );
+          })}
         </ul>
       </div>
     </div>
@@ -41,3 +49,18 @@ function App() {
 }
 
 export default App;
+
+function ToDoListItems({ value, keyNumber, todolist, setTodolist }) {
+  let closeTask = () => {
+    
+    //now to filter the todolist with keyNumber index and show the remaining data.
+    let finalData = todolist.filter((v, i) => i != keyNumber);
+    console.log(finalData);
+  };
+  return (
+    <li>
+      {value}
+      <span onClick={closeTask}>&times;</span>
+    </li>
+  );
+}
