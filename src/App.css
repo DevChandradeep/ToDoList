@@ -80,3 +80,44 @@ form button {
   right: 10px;
   cursor: pointer;
 }
+
+.taskcomplete {
+  text-decoration: line-through;
+}
+
+.tabdata {
+  width: 500px;
+  height: 500px;
+  background-color: antiquewhite;
+}
+.tabdata tr {
+  color: black;
+  font-size: 10px;
+}
+.tabdata tr td {
+  color: red;
+  font-size: 10px;
+}
+
+.tabsOuter {
+  margin: auto;
+  width: 1170px;
+}
+
+.tabsOuter ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.tabsOuter ul li button {
+  background-color: #e4e4e4;
+  border: none;
+  color: #343a40;
+  padding: 0.5rem 20px;
+  margin-right: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
