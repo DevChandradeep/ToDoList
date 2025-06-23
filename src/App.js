@@ -10,7 +10,7 @@ function App() {
   //for tabbling functionality
   let [activeTabs, setActiveTabs] = useState(0);
   //to take the content on the 0th position in the array.
-  let [activeContent, setActiveContent] = useState(TabsData[1]);
+  let [activeContent, setActiveContent] = useState(TabsData[0]);
 
   let saveToDoList = (event) => {
     event.preventDefault(); // it will prevent to refresh the form.(but form submitted.)
@@ -29,7 +29,9 @@ function App() {
   };
 
   function changeData(index) {
-    setActiveContent(index);
+    setActiveTabs(index);
+
+    setActiveContent(TabsData[index]);
   }
   return (
     <div className="App">
@@ -41,7 +43,12 @@ function App() {
           {TabsData.map((value, index) => {
             return (
               <li key={index}>
-                <button onClick={() => changeData(index)}>{value.label}</button>
+                <button
+                  onClick={() => changeData(index)}
+                  className={activeTabs == index ? "activeTab" : ""}
+                >
+                  {value.label}
+                </button>
               </li>
             );
           })}

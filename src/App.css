@@ -121,3 +121,8 @@ form button {
   font-weight: 600;
   cursor: pointer;
 }
+
+.activeTab {
+  color: white !important;
+  background-color: red !important;
+}
