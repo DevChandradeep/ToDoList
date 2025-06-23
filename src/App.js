@@ -28,9 +28,9 @@ function App() {
     }
   };
 
+  //this to change the p tag values as per button click.
   function changeData(index) {
     setActiveTabs(index);
-
     setActiveContent(TabsData[index]);
   }
   return (
